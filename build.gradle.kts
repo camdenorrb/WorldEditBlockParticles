@@ -1,6 +1,7 @@
 plugins {
     java
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.google.protobuf") version "0.9.4"
+    id("io.github.goooler.shadow") version "8.1.3"
 }
 
 group = "dev.twelveoclock"
@@ -23,6 +24,7 @@ dependencies {
     compileOnly("org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT")
 
     implementation("org.jetbrains:annotations:24.1.0")
+    implementation("com.google.protobuf:protobuf-java:3.25.2")
 
     // Jackson
     implementation("com.fasterxml.jackson.core:jackson-core:2.16.1")

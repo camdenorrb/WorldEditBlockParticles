@@ -1,10 +1,10 @@
-name: JavaPluginTemplate
+name: WorldEditBlockParticles
 version: "1.0.0"
 author: "MrKitty_Cat"
-api-version: 1.19
-main: dev.twelveoclock.plugintemplate.TemplatePlugin
+api-version: 1.20
+main: dev.twelveoclock.worldeditblockparticles.WorldEditBlockParticlesPlugin
 
 commands:
-  meow:
-    usage: "/meow"
-    description: "Spawns a cute catto with the name configured!"
+  blockparticles:
+    usage: "/blockparticles"
+    description: "Toggles block particles"

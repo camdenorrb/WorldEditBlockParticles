@@ -1,4 +1,4 @@
-package dev.twelveoclock.plugintemplate.utils;
+package dev.twelveoclock.worldeditblockparticles.utils;
 
 import org.bukkit.ChatColor;
 

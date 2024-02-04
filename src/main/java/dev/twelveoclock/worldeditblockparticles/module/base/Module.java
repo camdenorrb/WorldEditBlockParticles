@@ -1,4 +1,4 @@
-package dev.twelveoclock.plugintemplate.module.base;
+package dev.twelveoclock.worldeditblockparticles.module.base;
 
 /**
  * The base for something that can be enabled or disabled

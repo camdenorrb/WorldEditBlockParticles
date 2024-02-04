@@ -1,6 +1,6 @@
-package dev.twelveoclock.plugintemplate.config;
+package dev.twelveoclock.worldeditblockparticles.config;
 
-import dev.twelveoclock.plugintemplate.utils.ChatUtils;
+import dev.twelveoclock.worldeditblockparticles.utils.ChatUtils;
 
 /**
  * Represents the `config.toml` file's data
