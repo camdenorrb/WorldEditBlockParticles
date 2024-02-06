@@ -21,11 +21,11 @@ import java.util.*;
 
 public final class BlockParticlesCommand implements CommandExecutor, TabExecutor {
 
-    private final BlockParticlesModule blockParticlesModule;
+    private final WorldEditBlockParticlesPlugin plugin;
 
 
     public BlockParticlesCommand(final WorldEditBlockParticlesPlugin plugin) {
-        this.blockParticlesModule = plugin.getBlockParticlesModule();
+        this.plugin = plugin;
     }
 
 
@@ -143,7 +143,7 @@ public final class BlockParticlesCommand implements CommandExecutor, TabExecutor
 
         final String name = args[1];
 
-        final ParticleRunner particleRunner = blockParticlesModule.getParticleRunners().get(name);
+        final ParticleRunner particleRunner = plugin.getBlockParticlesModule().getParticleRunners().get(name);
         if (particleRunner == null) {
             player.sendMessage("No block particle found with name: " + name);
             return;
@@ -177,41 +177,45 @@ public final class BlockParticlesCommand implements CommandExecutor, TabExecutor
         }
 
 
-        // Flood fill
-        var visited = new HashSet<Block>();
-        var blockStack = new ArrayDeque<Block>();
+        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
 
-        blockStack.add(foundBlock);
+            // Flood fill
+            var visited = new HashSet<Block>();
+            var blockStack = new ArrayDeque<Block>();
 
-        while (!blockStack.isEmpty()) {
+            blockStack.add(foundBlock);
+            visited.add(foundBlock);
 
-            final var block = blockStack.pop();
+            MainLoop: while (!blockStack.isEmpty()) {
+                final var block = blockStack.pop();
 
-            final BlockParticle particle = BlockParticle.newBuilder()
-                    .setBlockLocation(BlockLocation.newBuilder().setX(block.getX()).setY(block.getY()).setZ(block.getZ()))
-                    .setParticle(particleToProto(bukkitParticle))
-                    .setCount(count)
-                    .build();
+                final BlockParticle particle = BlockParticle.newBuilder()
+                        .setBlockLocation(BlockLocation.newBuilder().setX(block.getX()).setY(block.getY()).setZ(block.getZ()))
+                        .setParticle(particleToProto(bukkitParticle))
+                        .setCount(count)
+                        .build();
 
-            particleRunner.getBlockParticles().add(particle);
+                particleRunner.getBlockParticles().add(particle);
 
-            visited.add(block);
+                // Add all surrounding blocks
+                for (final var face : BlockFace.values()) {
+                    final var relative = block.getRelative(face);
+                    if (relative.getType() == foundBlock.getType() && !visited.contains(relative)) {
 
-            if (visited.size() > 10000) {
-                player.sendMessage("Flood fill limit reached, stopping");
-                break;
-            }
-            // Add all surrounding blocks
-            for (final var face : BlockFace.values()) {
-                final var relative = block.getRelative(face);
-                if (relative.getType() == foundBlock.getType() && !visited.contains(relative)) {
-                    blockStack.add(relative);
+                        visited.add(relative);
+                        blockStack.add(relative);
+
+                        if (visited.size() >= 10000) {
+                            player.sendMessage("Flood fill limit reached, stopping");
+                            break MainLoop;
+                        }
+                    }
                 }
             }
-        }
 
-        blockParticlesModule.save(name, particleRunner);
-        player.sendMessage("Flood filled block particle: " + name + " " + bukkitParticle.name() + " " + particleRunner.getTickRate() + " ticks");
+            plugin.getBlockParticlesModule().save(name, particleRunner);
+            player.sendMessage("Flood filled block particle: " + name + " " + bukkitParticle.name() + " " + particleRunner.getTickRate() + " ticks");
+        });
 
     }
 
@@ -232,7 +236,7 @@ public final class BlockParticlesCommand implements CommandExecutor, TabExecutor
             return;
         }
 
-        blockParticlesModule.getParticleRunners().put(name, new ParticleRunner(tickRate, player.getWorld().getUID()));
+        plugin.getBlockParticlesModule().getParticleRunners().put(name, new ParticleRunner(tickRate, player.getWorld().getUID()));
         player.sendMessage("Added block particle: " + name + " " + tickRate + " ticks");
     }
 
@@ -255,7 +259,7 @@ public final class BlockParticlesCommand implements CommandExecutor, TabExecutor
 
         final String name = args[1];
 
-        final ParticleRunner particleRunner = blockParticlesModule.getParticleRunners().get(name);
+        final ParticleRunner particleRunner = plugin.getBlockParticlesModule().getParticleRunners().get(name);
         if (particleRunner == null) {
             player.sendMessage("No block particle found with name: " + name);
             return;
@@ -295,7 +299,7 @@ public final class BlockParticlesCommand implements CommandExecutor, TabExecutor
                 .build();
 
         particleRunner.getBlockParticles().add(particle);
-        blockParticlesModule.save(name, particleRunner);
+        plugin.getBlockParticlesModule().save(name, particleRunner);
 
         player.sendMessage("Added block particle: " + name + " " + bukkitParticle.name() + " " + particleRunner.getTickRate() + " ticks " + count + " count");
     }
@@ -306,7 +310,7 @@ public final class BlockParticlesCommand implements CommandExecutor, TabExecutor
         // TODO: /blockparticles rem <name> <number>
 
         final String name = args[1];
-        if (blockParticlesModule.rem(name) != null) {
+        if (plugin.getBlockParticlesModule().rem(name) != null) {
             player.sendMessage("Removed block particle: " + name);
         }
         else {
@@ -316,7 +320,7 @@ public final class BlockParticlesCommand implements CommandExecutor, TabExecutor
 
     private void listBlockParticles(final Player player, final String[] args) {
 
-        final String[] messages = blockParticlesModule.getParticleRunners().entrySet().stream().map(entry -> {
+        final String[] messages = plugin.getBlockParticlesModule().getParticleRunners().entrySet().stream().map(entry -> {
             final String name = entry.getKey();
             final ParticleRunner particleRunner = entry.getValue();
             return name + " " + particleRunner.getTickRate() + " ticks";
@@ -347,7 +351,7 @@ public final class BlockParticlesCommand implements CommandExecutor, TabExecutor
             case 1 -> List.of("create", "add", "rem", "list", "settings", "fill");
             case 2 -> {
                 if (equalsAny(args[0], "rem", "add", "settings", "fill")) {
-                    yield blockParticlesModule.getParticleRunners().keySet().stream()
+                    yield plugin.getBlockParticlesModule().getParticleRunners().keySet().stream()
                             .filter(name -> name.toLowerCase().startsWith(args[1].toLowerCase()))
                             .toList();
                 }
