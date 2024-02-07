@@ -5,11 +5,11 @@
 package dev.twelveoclock.worldeditblockparticles.proto;
 
 /**
- * Protobuf type {@code store.BlockParticle}
+ * Protobuf type {@code proto.BlockParticle}
  */
 public final class BlockParticle extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:store.BlockParticle)
+    // @@protoc_insertion_point(message_implements:proto.BlockParticle)
     BlockParticleOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use BlockParticle.newBuilder() to construct.
@@ -29,55 +29,39 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_BlockParticle_descriptor;
+    return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_BlockParticle_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_BlockParticle_fieldAccessorTable
+    return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_BlockParticle_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.class, dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int BLOCKLOCATION_FIELD_NUMBER = 1;
-  private dev.twelveoclock.worldeditblockparticles.proto.BlockLocation blockLocation_;
+  public static final int BLOCKPOSITIONBITMASK_FIELD_NUMBER = 1;
+  private long blockPositionBitMask_ = 0L;
   /**
-   * <code>.store.BlockLocation blockLocation = 1;</code>
-   * @return Whether the blockLocation field is set.
+   * <code>uint64 blockPositionBitMask = 1;</code>
+   * @return The blockPositionBitMask.
    */
   @java.lang.Override
-  public boolean hasBlockLocation() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <code>.store.BlockLocation blockLocation = 1;</code>
-   * @return The blockLocation.
-   */
-  @java.lang.Override
-  public dev.twelveoclock.worldeditblockparticles.proto.BlockLocation getBlockLocation() {
-    return blockLocation_ == null ? dev.twelveoclock.worldeditblockparticles.proto.BlockLocation.getDefaultInstance() : blockLocation_;
-  }
-  /**
-   * <code>.store.BlockLocation blockLocation = 1;</code>
-   */
-  @java.lang.Override
-  public dev.twelveoclock.worldeditblockparticles.proto.BlockLocationOrBuilder getBlockLocationOrBuilder() {
-    return blockLocation_ == null ? dev.twelveoclock.worldeditblockparticles.proto.BlockLocation.getDefaultInstance() : blockLocation_;
+  public long getBlockPositionBitMask() {
+    return blockPositionBitMask_;
   }
 
   public static final int PARTICLE_FIELD_NUMBER = 2;
   private int particle_ = 0;
   /**
-   * <code>.store.Particle particle = 2;</code>
+   * <code>.proto.Particle particle = 2;</code>
    * @return The enum numeric value on the wire for particle.
    */
   @java.lang.Override public int getParticleValue() {
     return particle_;
   }
   /**
-   * <code>.store.Particle particle = 2;</code>
+   * <code>.proto.Particle particle = 2;</code>
    * @return The particle.
    */
   @java.lang.Override public dev.twelveoclock.worldeditblockparticles.proto.Particle getParticle() {
@@ -110,8 +94,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getBlockLocation());
+    if (blockPositionBitMask_ != 0L) {
+      output.writeUInt64(1, blockPositionBitMask_);
     }
     if (particle_ != dev.twelveoclock.worldeditblockparticles.proto.Particle.PARTICLE_ASH.getNumber()) {
       output.writeEnum(2, particle_);
@@ -128,9 +112,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (blockPositionBitMask_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getBlockLocation());
+        .computeUInt64Size(1, blockPositionBitMask_);
     }
     if (particle_ != dev.twelveoclock.worldeditblockparticles.proto.Particle.PARTICLE_ASH.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
@@ -155,11 +139,8 @@ private static final long serialVersionUID = 0L;
     }
     dev.twelveoclock.worldeditblockparticles.proto.BlockParticle other = (dev.twelveoclock.worldeditblockparticles.proto.BlockParticle) obj;
 
-    if (hasBlockLocation() != other.hasBlockLocation()) return false;
-    if (hasBlockLocation()) {
-      if (!getBlockLocation()
-          .equals(other.getBlockLocation())) return false;
-    }
+    if (getBlockPositionBitMask()
+        != other.getBlockPositionBitMask()) return false;
     if (particle_ != other.particle_) return false;
     if (getCount()
         != other.getCount()) return false;
@@ -174,10 +155,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasBlockLocation()) {
-      hash = (37 * hash) + BLOCKLOCATION_FIELD_NUMBER;
-      hash = (53 * hash) + getBlockLocation().hashCode();
-    }
+    hash = (37 * hash) + BLOCKPOSITIONBITMASK_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getBlockPositionBitMask());
     hash = (37 * hash) + PARTICLE_FIELD_NUMBER;
     hash = (53 * hash) + particle_;
     hash = (37 * hash) + COUNT_FIELD_NUMBER;
@@ -280,50 +260,40 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code store.BlockParticle}
+   * Protobuf type {@code proto.BlockParticle}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:store.BlockParticle)
+      // @@protoc_insertion_point(builder_implements:proto.BlockParticle)
       dev.twelveoclock.worldeditblockparticles.proto.BlockParticleOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_BlockParticle_descriptor;
+      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_BlockParticle_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_BlockParticle_fieldAccessorTable
+      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_BlockParticle_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.class, dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.Builder.class);
     }
 
     // Construct using dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-        getBlockLocationFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      blockLocation_ = null;
-      if (blockLocationBuilder_ != null) {
-        blockLocationBuilder_.dispose();
-        blockLocationBuilder_ = null;
-      }
+      blockPositionBitMask_ = 0L;
       particle_ = 0;
       count_ = 0;
       return this;
@@ -332,7 +302,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_BlockParticle_descriptor;
+      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_BlockParticle_descriptor;
     }
 
     @java.lang.Override
@@ -359,12 +329,8 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(dev.twelveoclock.worldeditblockparticles.proto.BlockParticle result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.blockLocation_ = blockLocationBuilder_ == null
-            ? blockLocation_
-            : blockLocationBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        result.blockPositionBitMask_ = blockPositionBitMask_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.particle_ = particle_;
@@ -372,7 +338,6 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.count_ = count_;
       }
-      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -419,8 +384,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(dev.twelveoclock.worldeditblockparticles.proto.BlockParticle other) {
       if (other == dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.getDefaultInstance()) return this;
-      if (other.hasBlockLocation()) {
-        mergeBlockLocation(other.getBlockLocation());
+      if (other.getBlockPositionBitMask() != 0L) {
+        setBlockPositionBitMask(other.getBlockPositionBitMask());
       }
       if (other.particle_ != 0) {
         setParticleValue(other.getParticleValue());
@@ -454,13 +419,11 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              input.readMessage(
-                  getBlockLocationFieldBuilder().getBuilder(),
-                  extensionRegistry);
+            case 8: {
+              blockPositionBitMask_ = input.readUInt64();
               bitField0_ |= 0x00000001;
               break;
-            } // case 10
+            } // case 8
             case 16: {
               particle_ = input.readEnum();
               bitField0_ |= 0x00000002;
@@ -488,137 +451,48 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private dev.twelveoclock.worldeditblockparticles.proto.BlockLocation blockLocation_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        dev.twelveoclock.worldeditblockparticles.proto.BlockLocation, dev.twelveoclock.worldeditblockparticles.proto.BlockLocation.Builder, dev.twelveoclock.worldeditblockparticles.proto.BlockLocationOrBuilder> blockLocationBuilder_;
+    private long blockPositionBitMask_ ;
     /**
-     * <code>.store.BlockLocation blockLocation = 1;</code>
-     * @return Whether the blockLocation field is set.
+     * <code>uint64 blockPositionBitMask = 1;</code>
+     * @return The blockPositionBitMask.
      */
-    public boolean hasBlockLocation() {
-      return ((bitField0_ & 0x00000001) != 0);
+    @java.lang.Override
+    public long getBlockPositionBitMask() {
+      return blockPositionBitMask_;
     }
     /**
-     * <code>.store.BlockLocation blockLocation = 1;</code>
-     * @return The blockLocation.
+     * <code>uint64 blockPositionBitMask = 1;</code>
+     * @param value The blockPositionBitMask to set.
+     * @return This builder for chaining.
      */
-    public dev.twelveoclock.worldeditblockparticles.proto.BlockLocation getBlockLocation() {
-      if (blockLocationBuilder_ == null) {
-        return blockLocation_ == null ? dev.twelveoclock.worldeditblockparticles.proto.BlockLocation.getDefaultInstance() : blockLocation_;
-      } else {
-        return blockLocationBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.store.BlockLocation blockLocation = 1;</code>
-     */
-    public Builder setBlockLocation(dev.twelveoclock.worldeditblockparticles.proto.BlockLocation value) {
-      if (blockLocationBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        blockLocation_ = value;
-      } else {
-        blockLocationBuilder_.setMessage(value);
-      }
+    public Builder setBlockPositionBitMask(long value) {
+
+      blockPositionBitMask_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.store.BlockLocation blockLocation = 1;</code>
+     * <code>uint64 blockPositionBitMask = 1;</code>
+     * @return This builder for chaining.
      */
-    public Builder setBlockLocation(
-        dev.twelveoclock.worldeditblockparticles.proto.BlockLocation.Builder builderForValue) {
-      if (blockLocationBuilder_ == null) {
-        blockLocation_ = builderForValue.build();
-      } else {
-        blockLocationBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.store.BlockLocation blockLocation = 1;</code>
-     */
-    public Builder mergeBlockLocation(dev.twelveoclock.worldeditblockparticles.proto.BlockLocation value) {
-      if (blockLocationBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0) &&
-          blockLocation_ != null &&
-          blockLocation_ != dev.twelveoclock.worldeditblockparticles.proto.BlockLocation.getDefaultInstance()) {
-          getBlockLocationBuilder().mergeFrom(value);
-        } else {
-          blockLocation_ = value;
-        }
-      } else {
-        blockLocationBuilder_.mergeFrom(value);
-      }
-      if (blockLocation_ != null) {
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.store.BlockLocation blockLocation = 1;</code>
-     */
-    public Builder clearBlockLocation() {
+    public Builder clearBlockPositionBitMask() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      blockLocation_ = null;
-      if (blockLocationBuilder_ != null) {
-        blockLocationBuilder_.dispose();
-        blockLocationBuilder_ = null;
-      }
+      blockPositionBitMask_ = 0L;
       onChanged();
       return this;
-    }
-    /**
-     * <code>.store.BlockLocation blockLocation = 1;</code>
-     */
-    public dev.twelveoclock.worldeditblockparticles.proto.BlockLocation.Builder getBlockLocationBuilder() {
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return getBlockLocationFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.store.BlockLocation blockLocation = 1;</code>
-     */
-    public dev.twelveoclock.worldeditblockparticles.proto.BlockLocationOrBuilder getBlockLocationOrBuilder() {
-      if (blockLocationBuilder_ != null) {
-        return blockLocationBuilder_.getMessageOrBuilder();
-      } else {
-        return blockLocation_ == null ?
-            dev.twelveoclock.worldeditblockparticles.proto.BlockLocation.getDefaultInstance() : blockLocation_;
-      }
-    }
-    /**
-     * <code>.store.BlockLocation blockLocation = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        dev.twelveoclock.worldeditblockparticles.proto.BlockLocation, dev.twelveoclock.worldeditblockparticles.proto.BlockLocation.Builder, dev.twelveoclock.worldeditblockparticles.proto.BlockLocationOrBuilder> 
-        getBlockLocationFieldBuilder() {
-      if (blockLocationBuilder_ == null) {
-        blockLocationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            dev.twelveoclock.worldeditblockparticles.proto.BlockLocation, dev.twelveoclock.worldeditblockparticles.proto.BlockLocation.Builder, dev.twelveoclock.worldeditblockparticles.proto.BlockLocationOrBuilder>(
-                getBlockLocation(),
-                getParentForChildren(),
-                isClean());
-        blockLocation_ = null;
-      }
-      return blockLocationBuilder_;
     }
 
     private int particle_ = 0;
     /**
-     * <code>.store.Particle particle = 2;</code>
+     * <code>.proto.Particle particle = 2;</code>
      * @return The enum numeric value on the wire for particle.
      */
     @java.lang.Override public int getParticleValue() {
       return particle_;
     }
     /**
-     * <code>.store.Particle particle = 2;</code>
+     * <code>.proto.Particle particle = 2;</code>
      * @param value The enum numeric value on the wire for particle to set.
      * @return This builder for chaining.
      */
@@ -629,7 +503,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.store.Particle particle = 2;</code>
+     * <code>.proto.Particle particle = 2;</code>
      * @return The particle.
      */
     @java.lang.Override
@@ -638,7 +512,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? dev.twelveoclock.worldeditblockparticles.proto.Particle.UNRECOGNIZED : result;
     }
     /**
-     * <code>.store.Particle particle = 2;</code>
+     * <code>.proto.Particle particle = 2;</code>
      * @param value The particle to set.
      * @return This builder for chaining.
      */
@@ -652,7 +526,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.store.Particle particle = 2;</code>
+     * <code>.proto.Particle particle = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearParticle() {
@@ -706,10 +580,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:store.BlockParticle)
+    // @@protoc_insertion_point(builder_scope:proto.BlockParticle)
   }
 
-  // @@protoc_insertion_point(class_scope:store.BlockParticle)
+  // @@protoc_insertion_point(class_scope:proto.BlockParticle)
   private static final dev.twelveoclock.worldeditblockparticles.proto.BlockParticle DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new dev.twelveoclock.worldeditblockparticles.proto.BlockParticle();

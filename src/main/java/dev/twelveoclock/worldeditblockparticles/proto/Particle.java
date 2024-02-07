@@ -5,7 +5,7 @@
 package dev.twelveoclock.worldeditblockparticles.proto;
 
 /**
- * Protobuf enum {@code store.Particle}
+ * Protobuf enum {@code proto.Particle}
  */
 public enum Particle
     implements com.google.protobuf.ProtocolMessageEnum {
@@ -1036,6 +1036,6 @@ public enum Particle
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:store.Particle)
+  // @@protoc_insertion_point(enum_scope:proto.Particle)
 }
 

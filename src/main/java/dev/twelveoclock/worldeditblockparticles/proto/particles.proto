@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package store;
+package proto;
 
 option java_multiple_files = true;
 option java_package = "dev.twelveoclock.worldeditblockparticles.proto";
@@ -18,15 +18,9 @@ message UUID {
 }
 
 message BlockParticle {
-  BlockLocation blockLocation = 1;
+  uint64 blockPositionBitMask = 1;
   Particle particle = 2;
   uint32 count = 3;
-}
-
-message BlockLocation {
-  int32 x = 1;
-  int32 y = 2;
-  int32 z = 3;
 }
 
 enum Particle {

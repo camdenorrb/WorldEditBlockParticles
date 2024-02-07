@@ -5,31 +5,22 @@
 package dev.twelveoclock.worldeditblockparticles.proto;
 
 public interface BlockParticleOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:store.BlockParticle)
+    // @@protoc_insertion_point(interface_extends:proto.BlockParticle)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.store.BlockLocation blockLocation = 1;</code>
-   * @return Whether the blockLocation field is set.
+   * <code>uint64 blockPositionBitMask = 1;</code>
+   * @return The blockPositionBitMask.
    */
-  boolean hasBlockLocation();
-  /**
-   * <code>.store.BlockLocation blockLocation = 1;</code>
-   * @return The blockLocation.
-   */
-  dev.twelveoclock.worldeditblockparticles.proto.BlockLocation getBlockLocation();
-  /**
-   * <code>.store.BlockLocation blockLocation = 1;</code>
-   */
-  dev.twelveoclock.worldeditblockparticles.proto.BlockLocationOrBuilder getBlockLocationOrBuilder();
+  long getBlockPositionBitMask();
 
   /**
-   * <code>.store.Particle particle = 2;</code>
+   * <code>.proto.Particle particle = 2;</code>
    * @return The enum numeric value on the wire for particle.
    */
   int getParticleValue();
   /**
-   * <code>.store.Particle particle = 2;</code>
+   * <code>.proto.Particle particle = 2;</code>
    * @return The particle.
    */
   dev.twelveoclock.worldeditblockparticles.proto.Particle getParticle();

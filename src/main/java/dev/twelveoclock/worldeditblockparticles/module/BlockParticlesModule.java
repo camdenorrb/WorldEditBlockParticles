@@ -3,6 +3,7 @@ package dev.twelveoclock.worldeditblockparticles.module;
 import dev.twelveoclock.worldeditblockparticles.WorldEditBlockParticlesPlugin;
 import dev.twelveoclock.worldeditblockparticles.module.base.PluginModule;
 import dev.twelveoclock.worldeditblockparticles.particle.ParticleRunner;
+import dev.twelveoclock.worldeditblockparticles.position.BlockPosition;
 import dev.twelveoclock.worldeditblockparticles.proto.BlockParticle;
 import dev.twelveoclock.worldeditblockparticles.proto.BlockParticles;
 import org.bukkit.scheduler.BukkitTask;
@@ -11,7 +12,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.UUID;
 
@@ -102,7 +102,9 @@ public final class BlockParticlesModule extends PluginModule {
                     final var worldUUID = particles.getWorldUUID();
                     final ParticleRunner particleRunner = new ParticleRunner(particles.getTickRate(), new UUID(worldUUID.getMostSigBits(), worldUUID.getLeastSigBits()));
 
-                    particleRunner.getBlockParticles().addAll(particles.getBlockParticlesList());
+                    particles.getBlockParticlesList().forEach(blockParticle ->
+                            particleRunner.getBlockParticles().add(blockParticle)
+                    );
 
                     var name = path.getFileName().toString();
                     name = name.substring(0, name.length() - ".particle".length());
@@ -115,12 +117,6 @@ public final class BlockParticlesModule extends PluginModule {
         } catch (final IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-
-    public ParticleRunner set(final String name, final BlockParticle particle, final int tickRate, final UUID worldUUID) {
-        final var particleRunner = new ParticleRunner(new HashSet<>(){{add(particle);}}, tickRate, worldUUID);
-        return particleRunners.put(name, particleRunner);
     }
 
     public ParticleRunner rem(final String name) {

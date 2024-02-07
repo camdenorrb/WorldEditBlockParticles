@@ -1,6 +1,6 @@
 package dev.twelveoclock.worldeditblockparticles.particle;
 
-import dev.twelveoclock.worldeditblockparticles.proto.BlockLocation;
+import dev.twelveoclock.worldeditblockparticles.position.BlockPosition;
 import dev.twelveoclock.worldeditblockparticles.proto.BlockParticle;
 import org.bukkit.Particle;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -9,6 +9,7 @@ import java.util.*;
 
 public final class ParticleRunner {
 
+    // Don't make this a map, we want multiple particles per block
     private final Set<BlockParticle> blockParticles;
 
     private final int tickRate;
@@ -67,8 +68,15 @@ public final class ParticleRunner {
         tickCount = 0;
 
         for (final var particle : blockParticles) {
-            final BlockLocation location = particle.getBlockLocation();
-            final var block = Objects.requireNonNull(plugin.getServer().getWorld(worldUUID)).getBlockAt(location.getX(), location.getY(), location.getZ());
+
+            final long blockPositionBitMask = particle.getBlockPositionBitMask();
+
+            final var block = Objects.requireNonNull(plugin.getServer().getWorld(worldUUID)).getBlockAt(
+                    BlockPosition.getX(blockPositionBitMask),
+                    BlockPosition.getY(blockPositionBitMask),
+                    BlockPosition.getZ(blockPositionBitMask)
+            );
+
             block.getWorld().spawnParticle(fromProto(particle.getParticle()), block.getLocation().add(0.5, 0, 0.5), particle.getCount());
         }
     }

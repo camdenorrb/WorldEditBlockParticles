@@ -5,7 +5,7 @@
 package dev.twelveoclock.worldeditblockparticles.proto;
 
 public interface UUIDOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:store.UUID)
+    // @@protoc_insertion_point(interface_extends:proto.UUID)
     com.google.protobuf.MessageOrBuilder {
 
   /**

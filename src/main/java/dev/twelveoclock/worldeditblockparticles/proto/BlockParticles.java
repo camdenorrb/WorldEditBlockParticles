@@ -5,11 +5,11 @@
 package dev.twelveoclock.worldeditblockparticles.proto;
 
 /**
- * Protobuf type {@code store.BlockParticles}
+ * Protobuf type {@code proto.BlockParticles}
  */
 public final class BlockParticles extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:store.BlockParticles)
+    // @@protoc_insertion_point(message_implements:proto.BlockParticles)
     BlockParticlesOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use BlockParticles.newBuilder() to construct.
@@ -29,13 +29,13 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_BlockParticles_descriptor;
+    return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_BlockParticles_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_BlockParticles_fieldAccessorTable
+    return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_BlockParticles_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             dev.twelveoclock.worldeditblockparticles.proto.BlockParticles.class, dev.twelveoclock.worldeditblockparticles.proto.BlockParticles.Builder.class);
   }
@@ -55,7 +55,7 @@ private static final long serialVersionUID = 0L;
   public static final int WORLDUUID_FIELD_NUMBER = 2;
   private dev.twelveoclock.worldeditblockparticles.proto.UUID worldUUID_;
   /**
-   * <code>.store.UUID worldUUID = 2;</code>
+   * <code>.proto.UUID worldUUID = 2;</code>
    * @return Whether the worldUUID field is set.
    */
   @java.lang.Override
@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.store.UUID worldUUID = 2;</code>
+   * <code>.proto.UUID worldUUID = 2;</code>
    * @return The worldUUID.
    */
   @java.lang.Override
@@ -71,7 +71,7 @@ private static final long serialVersionUID = 0L;
     return worldUUID_ == null ? dev.twelveoclock.worldeditblockparticles.proto.UUID.getDefaultInstance() : worldUUID_;
   }
   /**
-   * <code>.store.UUID worldUUID = 2;</code>
+   * <code>.proto.UUID worldUUID = 2;</code>
    */
   @java.lang.Override
   public dev.twelveoclock.worldeditblockparticles.proto.UUIDOrBuilder getWorldUUIDOrBuilder() {
@@ -82,14 +82,14 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<dev.twelveoclock.worldeditblockparticles.proto.BlockParticle> blockParticles_;
   /**
-   * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+   * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
    */
   @java.lang.Override
   public java.util.List<dev.twelveoclock.worldeditblockparticles.proto.BlockParticle> getBlockParticlesList() {
     return blockParticles_;
   }
   /**
-   * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+   * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
    */
   @java.lang.Override
   public java.util.List<? extends dev.twelveoclock.worldeditblockparticles.proto.BlockParticleOrBuilder> 
@@ -97,21 +97,21 @@ private static final long serialVersionUID = 0L;
     return blockParticles_;
   }
   /**
-   * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+   * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
    */
   @java.lang.Override
   public int getBlockParticlesCount() {
     return blockParticles_.size();
   }
   /**
-   * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+   * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
    */
   @java.lang.Override
   public dev.twelveoclock.worldeditblockparticles.proto.BlockParticle getBlockParticles(int index) {
     return blockParticles_.get(index);
   }
   /**
-   * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+   * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
    */
   @java.lang.Override
   public dev.twelveoclock.worldeditblockparticles.proto.BlockParticleOrBuilder getBlockParticlesOrBuilder(
@@ -306,21 +306,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code store.BlockParticles}
+   * Protobuf type {@code proto.BlockParticles}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:store.BlockParticles)
+      // @@protoc_insertion_point(builder_implements:proto.BlockParticles)
       dev.twelveoclock.worldeditblockparticles.proto.BlockParticlesOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_BlockParticles_descriptor;
+      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_BlockParticles_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_BlockParticles_fieldAccessorTable
+      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_BlockParticles_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               dev.twelveoclock.worldeditblockparticles.proto.BlockParticles.class, dev.twelveoclock.worldeditblockparticles.proto.BlockParticles.Builder.class);
     }
@@ -365,7 +365,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_BlockParticles_descriptor;
+      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_BlockParticles_descriptor;
     }
 
     @java.lang.Override
@@ -598,14 +598,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         dev.twelveoclock.worldeditblockparticles.proto.UUID, dev.twelveoclock.worldeditblockparticles.proto.UUID.Builder, dev.twelveoclock.worldeditblockparticles.proto.UUIDOrBuilder> worldUUIDBuilder_;
     /**
-     * <code>.store.UUID worldUUID = 2;</code>
+     * <code>.proto.UUID worldUUID = 2;</code>
      * @return Whether the worldUUID field is set.
      */
     public boolean hasWorldUUID() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.store.UUID worldUUID = 2;</code>
+     * <code>.proto.UUID worldUUID = 2;</code>
      * @return The worldUUID.
      */
     public dev.twelveoclock.worldeditblockparticles.proto.UUID getWorldUUID() {
@@ -616,7 +616,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.store.UUID worldUUID = 2;</code>
+     * <code>.proto.UUID worldUUID = 2;</code>
      */
     public Builder setWorldUUID(dev.twelveoclock.worldeditblockparticles.proto.UUID value) {
       if (worldUUIDBuilder_ == null) {
@@ -632,7 +632,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.store.UUID worldUUID = 2;</code>
+     * <code>.proto.UUID worldUUID = 2;</code>
      */
     public Builder setWorldUUID(
         dev.twelveoclock.worldeditblockparticles.proto.UUID.Builder builderForValue) {
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.store.UUID worldUUID = 2;</code>
+     * <code>.proto.UUID worldUUID = 2;</code>
      */
     public Builder mergeWorldUUID(dev.twelveoclock.worldeditblockparticles.proto.UUID value) {
       if (worldUUIDBuilder_ == null) {
@@ -667,7 +667,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.store.UUID worldUUID = 2;</code>
+     * <code>.proto.UUID worldUUID = 2;</code>
      */
     public Builder clearWorldUUID() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -680,7 +680,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.store.UUID worldUUID = 2;</code>
+     * <code>.proto.UUID worldUUID = 2;</code>
      */
     public dev.twelveoclock.worldeditblockparticles.proto.UUID.Builder getWorldUUIDBuilder() {
       bitField0_ |= 0x00000002;
@@ -688,7 +688,7 @@ private static final long serialVersionUID = 0L;
       return getWorldUUIDFieldBuilder().getBuilder();
     }
     /**
-     * <code>.store.UUID worldUUID = 2;</code>
+     * <code>.proto.UUID worldUUID = 2;</code>
      */
     public dev.twelveoclock.worldeditblockparticles.proto.UUIDOrBuilder getWorldUUIDOrBuilder() {
       if (worldUUIDBuilder_ != null) {
@@ -699,7 +699,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.store.UUID worldUUID = 2;</code>
+     * <code>.proto.UUID worldUUID = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         dev.twelveoclock.worldeditblockparticles.proto.UUID, dev.twelveoclock.worldeditblockparticles.proto.UUID.Builder, dev.twelveoclock.worldeditblockparticles.proto.UUIDOrBuilder> 
@@ -728,7 +728,7 @@ private static final long serialVersionUID = 0L;
         dev.twelveoclock.worldeditblockparticles.proto.BlockParticle, dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.Builder, dev.twelveoclock.worldeditblockparticles.proto.BlockParticleOrBuilder> blockParticlesBuilder_;
 
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public java.util.List<dev.twelveoclock.worldeditblockparticles.proto.BlockParticle> getBlockParticlesList() {
       if (blockParticlesBuilder_ == null) {
@@ -738,7 +738,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public int getBlockParticlesCount() {
       if (blockParticlesBuilder_ == null) {
@@ -748,7 +748,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public dev.twelveoclock.worldeditblockparticles.proto.BlockParticle getBlockParticles(int index) {
       if (blockParticlesBuilder_ == null) {
@@ -758,7 +758,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public Builder setBlockParticles(
         int index, dev.twelveoclock.worldeditblockparticles.proto.BlockParticle value) {
@@ -775,7 +775,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public Builder setBlockParticles(
         int index, dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.Builder builderForValue) {
@@ -789,7 +789,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public Builder addBlockParticles(dev.twelveoclock.worldeditblockparticles.proto.BlockParticle value) {
       if (blockParticlesBuilder_ == null) {
@@ -805,7 +805,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public Builder addBlockParticles(
         int index, dev.twelveoclock.worldeditblockparticles.proto.BlockParticle value) {
@@ -822,7 +822,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public Builder addBlockParticles(
         dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.Builder builderForValue) {
@@ -836,7 +836,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public Builder addBlockParticles(
         int index, dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.Builder builderForValue) {
@@ -850,7 +850,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public Builder addAllBlockParticles(
         java.lang.Iterable<? extends dev.twelveoclock.worldeditblockparticles.proto.BlockParticle> values) {
@@ -865,7 +865,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public Builder clearBlockParticles() {
       if (blockParticlesBuilder_ == null) {
@@ -878,7 +878,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public Builder removeBlockParticles(int index) {
       if (blockParticlesBuilder_ == null) {
@@ -891,14 +891,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.Builder getBlockParticlesBuilder(
         int index) {
       return getBlockParticlesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public dev.twelveoclock.worldeditblockparticles.proto.BlockParticleOrBuilder getBlockParticlesOrBuilder(
         int index) {
@@ -908,7 +908,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public java.util.List<? extends dev.twelveoclock.worldeditblockparticles.proto.BlockParticleOrBuilder> 
          getBlockParticlesOrBuilderList() {
@@ -919,14 +919,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.Builder addBlockParticlesBuilder() {
       return getBlockParticlesFieldBuilder().addBuilder(
           dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.getDefaultInstance());
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.Builder addBlockParticlesBuilder(
         int index) {
@@ -934,7 +934,7 @@ private static final long serialVersionUID = 0L;
           index, dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.getDefaultInstance());
     }
     /**
-     * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+     * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
      */
     public java.util.List<dev.twelveoclock.worldeditblockparticles.proto.BlockParticle.Builder> 
          getBlockParticlesBuilderList() {
@@ -967,10 +967,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:store.BlockParticles)
+    // @@protoc_insertion_point(builder_scope:proto.BlockParticles)
   }
 
-  // @@protoc_insertion_point(class_scope:store.BlockParticles)
+  // @@protoc_insertion_point(class_scope:proto.BlockParticles)
   private static final dev.twelveoclock.worldeditblockparticles.proto.BlockParticles DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new dev.twelveoclock.worldeditblockparticles.proto.BlockParticles();

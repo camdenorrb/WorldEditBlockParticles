@@ -5,7 +5,7 @@
 package dev.twelveoclock.worldeditblockparticles.proto;
 
 public interface BlockParticlesOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:store.BlockParticles)
+    // @@protoc_insertion_point(interface_extends:proto.BlockParticles)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -15,40 +15,40 @@ public interface BlockParticlesOrBuilder extends
   int getTickRate();
 
   /**
-   * <code>.store.UUID worldUUID = 2;</code>
+   * <code>.proto.UUID worldUUID = 2;</code>
    * @return Whether the worldUUID field is set.
    */
   boolean hasWorldUUID();
   /**
-   * <code>.store.UUID worldUUID = 2;</code>
+   * <code>.proto.UUID worldUUID = 2;</code>
    * @return The worldUUID.
    */
   dev.twelveoclock.worldeditblockparticles.proto.UUID getWorldUUID();
   /**
-   * <code>.store.UUID worldUUID = 2;</code>
+   * <code>.proto.UUID worldUUID = 2;</code>
    */
   dev.twelveoclock.worldeditblockparticles.proto.UUIDOrBuilder getWorldUUIDOrBuilder();
 
   /**
-   * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+   * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
    */
   java.util.List<dev.twelveoclock.worldeditblockparticles.proto.BlockParticle> 
       getBlockParticlesList();
   /**
-   * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+   * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
    */
   dev.twelveoclock.worldeditblockparticles.proto.BlockParticle getBlockParticles(int index);
   /**
-   * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+   * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
    */
   int getBlockParticlesCount();
   /**
-   * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+   * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
    */
   java.util.List<? extends dev.twelveoclock.worldeditblockparticles.proto.BlockParticleOrBuilder> 
       getBlockParticlesOrBuilderList();
   /**
-   * <code>repeated .store.BlockParticle blockParticles = 3;</code>
+   * <code>repeated .proto.BlockParticle blockParticles = 3;</code>
    */
   dev.twelveoclock.worldeditblockparticles.proto.BlockParticleOrBuilder getBlockParticlesOrBuilder(
       int index);

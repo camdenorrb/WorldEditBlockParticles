@@ -1,9 +1,8 @@
 package dev.twelveoclock.worldeditblockparticles.commands;
 
 import dev.twelveoclock.worldeditblockparticles.WorldEditBlockParticlesPlugin;
-import dev.twelveoclock.worldeditblockparticles.module.BlockParticlesModule;
 import dev.twelveoclock.worldeditblockparticles.particle.ParticleRunner;
-import dev.twelveoclock.worldeditblockparticles.proto.BlockLocation;
+import dev.twelveoclock.worldeditblockparticles.position.BlockPosition;
 import dev.twelveoclock.worldeditblockparticles.proto.BlockParticle;
 import org.bukkit.*;
 import org.bukkit.block.Block;
@@ -190,7 +189,7 @@ public final class BlockParticlesCommand implements CommandExecutor, TabExecutor
                 final var block = blockStack.pop();
 
                 final BlockParticle particle = BlockParticle.newBuilder()
-                        .setBlockLocation(BlockLocation.newBuilder().setX(block.getX()).setY(block.getY()).setZ(block.getZ()))
+                        .setBlockPositionBitMask(BlockPosition.getAsBitMask(block.getX(), block.getY(), block.getZ()))
                         .setParticle(particleToProto(bukkitParticle))
                         .setCount(count)
                         .build();
@@ -293,7 +292,7 @@ public final class BlockParticlesCommand implements CommandExecutor, TabExecutor
         }
 
         final BlockParticle particle = BlockParticle.newBuilder()
-                .setBlockLocation(BlockLocation.newBuilder().setX(foundBlock.getX()).setY(foundBlock.getY()).setZ(foundBlock.getZ()))
+                .setBlockPositionBitMask(BlockPosition.getAsBitMask(foundBlock.getX(), foundBlock.getY(), foundBlock.getZ()))
                 .setParticle(particleToProto(bukkitParticle))
                 .setCount(count)
                 .build();

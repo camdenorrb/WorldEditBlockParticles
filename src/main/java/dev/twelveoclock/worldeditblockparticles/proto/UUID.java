@@ -5,11 +5,11 @@
 package dev.twelveoclock.worldeditblockparticles.proto;
 
 /**
- * Protobuf type {@code store.UUID}
+ * Protobuf type {@code proto.UUID}
  */
 public final class UUID extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:store.UUID)
+    // @@protoc_insertion_point(message_implements:proto.UUID)
     UUIDOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use UUID.newBuilder() to construct.
@@ -28,13 +28,13 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_UUID_descriptor;
+    return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_UUID_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_UUID_fieldAccessorTable
+    return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_UUID_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             dev.twelveoclock.worldeditblockparticles.proto.UUID.class, dev.twelveoclock.worldeditblockparticles.proto.UUID.Builder.class);
   }
@@ -232,21 +232,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code store.UUID}
+   * Protobuf type {@code proto.UUID}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:store.UUID)
+      // @@protoc_insertion_point(builder_implements:proto.UUID)
       dev.twelveoclock.worldeditblockparticles.proto.UUIDOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_UUID_descriptor;
+      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_UUID_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_UUID_fieldAccessorTable
+      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_UUID_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               dev.twelveoclock.worldeditblockparticles.proto.UUID.class, dev.twelveoclock.worldeditblockparticles.proto.UUID.Builder.class);
     }
@@ -273,7 +273,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_store_UUID_descriptor;
+      return dev.twelveoclock.worldeditblockparticles.proto.ParticlesData.internal_static_proto_UUID_descriptor;
     }
 
     @java.lang.Override
@@ -487,10 +487,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:store.UUID)
+    // @@protoc_insertion_point(builder_scope:proto.UUID)
   }
 
-  // @@protoc_insertion_point(class_scope:store.UUID)
+  // @@protoc_insertion_point(class_scope:proto.UUID)
   private static final dev.twelveoclock.worldeditblockparticles.proto.UUID DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new dev.twelveoclock.worldeditblockparticles.proto.UUID();
