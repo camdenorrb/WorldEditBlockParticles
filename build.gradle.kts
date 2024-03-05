@@ -1,7 +1,7 @@
 plugins {
     java
     id("com.google.protobuf") version "0.9.4"
-    id("io.github.goooler.shadow") version "8.1.6"
+    id("io.github.goooler.shadow") version "8.1.7"
 }
 
 group = "dev.twelveoclock"
