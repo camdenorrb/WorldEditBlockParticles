@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
 
-    compileOnly("org.spigotmc:spigot-api:1.20.5-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.20.6-R0.1-SNAPSHOT")
 
     implementation("org.jetbrains:annotations:24.1.0")
     implementation("com.google.protobuf:protobuf-java:4.26.1")
