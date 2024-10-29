@@ -27,7 +27,7 @@ dependencies {
     implementation("com.google.protobuf:protobuf-java:4.28.3")
 
     // Jackson
-    implementation("com.fasterxml.jackson.core:jackson-core:2.18.0")
+    implementation("com.fasterxml.jackson.core:jackson-core:2.18.1")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-toml:2.18.0")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.11.3")
