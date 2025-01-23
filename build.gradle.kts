@@ -23,7 +23,7 @@ dependencies {
 
     compileOnly("org.spigotmc:spigot-api:1.21.4-R0.1-SNAPSHOT")
 
-    implementation("org.jetbrains:annotations:26.0.1")
+    implementation("org.jetbrains:annotations:26.0.2")
     implementation("com.google.protobuf:protobuf-java:4.29.3")
 
     // Jackson
