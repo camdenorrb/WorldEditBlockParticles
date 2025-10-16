@@ -24,7 +24,7 @@ dependencies {
     compileOnly("org.spigotmc:spigot-api:1.21.10-R0.1-SNAPSHOT")
 
     implementation("org.jetbrains:annotations:26.0.2-1")
-    implementation("com.google.protobuf:protobuf-java:4.32.1")
+    implementation("com.google.protobuf:protobuf-java:4.33.0")
 
     // Jackson
     implementation("com.fasterxml.jackson.core:jackson-core:2.20.0")
