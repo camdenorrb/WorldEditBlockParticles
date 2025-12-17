@@ -1,6 +1,6 @@
 plugins {
     java
-    id("com.google.protobuf") version "0.9.5"
+    id("com.google.protobuf") version "0.9.6"
     id("io.github.goooler.shadow") version "8.1.8"
 }
 
